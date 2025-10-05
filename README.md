@@ -15,7 +15,7 @@ Ca si parte introductiva a labortatorului de APM, ce isi propune sa va dezvaluia
 
 Pentru laboratorul nostru introductiv o sa ne focusam pe o varianta cat mai simpla a acestui ISA, si anume o arhitectura de tip acumulator precum in imaginea de mai jos:
 
-![alt text](accumulator-computing.png)
+![alt text](img/accumulator-computing.png)
 
 Practic procesorul nostru va putea sa incarce intr-un registru de tip acumulator o valoare arbitrara (instructiunea **LOAD**), pe care mai apoi o poate modifica efectuand operatii aritmetice consecutive asupra ei (in cazul nostru adunari si/sau scaderi - **ADD/SUB**), mentinand mereu in acest registru rezultatul curent. 
 
@@ -80,7 +80,7 @@ Un exemplu de program ce ar fi incarcat in memoria procesorului este urmatorul (
 
 ## Microarhitectura procesorului
 
-![alt text](schematic-conceptual.png)
+![alt text](img/schematic-conceptual.png)
 
 Mai sus vedem o schema conceptuala a procesorului nostru. Avand in vedere constragerile ISA-ului, procesorul nostru trebuie sa fie capabil de urmatoarele:
 - Sa citeasca instructiunea curenta si sa o decodifice
@@ -111,7 +111,7 @@ Diagrama de mai jos reprezinta schema block din Vivado, ce reprezinta detaliile 
 - Semnalul **HALT** este generat in cadrul aceleeasi instructiuni, si are rolul sa opreasca avansarea PC-ului (practic opreste executia)
 - Instructiunea **OUT** genereaza semnalul **OUT_ACC** ce are ca rol blocarea (dezectivarea) registrului **ACCUMULATOR** pentru a mentine valoarea curenta nealterata.
 
-![alt text](schematic-vivado.png)
+![alt text](img/schematic-vivado.png)
 
 ### Implementarea si testarea SAP1
 Mai jos avem modulul **top** al procesorului, descris in verilog, ce integreaza toate modulele din diagrama de mai sus:
@@ -206,9 +206,11 @@ endmodule
 
 O implementare corecta a microprocesorului SAP1 ar trebui sa rezulte in urmatoarea diagrama a formelor de unda pentru programul nostru de test:
 
-![alt text](testbench-results.png)
+![alt text](img/testbench-results.png)
 
-Modulul **top** al procesorului, si memoria de instructiuni, nu sunt sufuciente pentru a obtine implementarea completa a acestuia. Lipsesc module precum **ALU, ACCUMULATOR, PC, etc.** 
+Toate aceste module, plus programul de test, le gasiti in folderul **./src** al acestui repo-ului.
+
+Modulul **top** al procesorului si memoria de instructiuni nu sunt sufuciente pentru a obtine implementarea completa a acestuia. Lipsesc module precum **ALU, ACCUMULATOR, PC, etc.** 
 
 In sectiunea de cerinte de mai jos, vi se cere sa implementati toate submodulele ramase din cadrul modulului **top** pentru a putea obtine un microprocesor SAP1 complet functional.
 
@@ -306,13 +308,13 @@ Ca si reminder, va lasam mai jos cateva portiuni folosite la laboratorul de SOC 
 
 La [final](#template-xdc-nexys7) aveti si un template de fisier XDC pentru placa FPGA Nexys7 pe care o avem in cadrul laboratorului.
 
-![alt text](image-2.png)
+![alt text](img/image-2.png)
 
-![alt text](image-1.png)
+![alt text](img/image-1.png)
 
-![alt text](image.png)
+![alt text](img/image.png)
 
-![alt text](image-3.png)
+![alt text](img/image-3.png)
 
 ### Template XDC Nexys7
 
