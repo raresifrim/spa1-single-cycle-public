@@ -1,10 +1,10 @@
 # Simple-As-Possible 1 - Cel mai simplu microprocesor posibil
 
-Ca si parte introductiva a labortatorului de APM, ce isi propune sa va dezvaluiasca tainele ascunse ale acestor magice minuni construite din fire de nisip, procesoarele, vom incepe cu implementarea celui mai simplu microprocesor posibil **SPA1**.
+Ca si parte introductiva a labortatorului de APM, ce isi propune sa va dezvaluiasca tainele ascunse ale acestor magice minuni construite din fire de nisip, procesoarele, vom incepe cu implementarea celui mai simplu microprocesor posibil **SAP1**.
 
 ## Despre
 
-**SPA1** este un microprocesor didactic ce implementeaza in cea mai simpla varianta a sa 5 instructiuni:
+**SAP1** este un microprocesor didactic ce implementeaza in cea mai simpla varianta a sa 5 instructiuni:
 - **_LOAD_**: incarcarea unei valori in "_interiourul_" microprocesorului (vom vedea mai jos ce inseamna asta)
 - **_ADD_**: adunarea a doua valori
 - **_SUB_**: scaderea a doua valori
@@ -21,7 +21,7 @@ Practic procesorul nostru va putea sa incarce intr-un registru de tip acumulator
 
 Instructiunea **OUT** poate mai apoi sa scoata si sa pastreze la iesire rezultatutl curent. Mai apoi, cu o noua instructiune **LOAD** se poate incarca (practic reseta) o noua valoare in registrul acumulator pentru efectuarea unor noi seturi de calcule, sau executia se poate opri cu instructiunea **HALT**.
 
-## Setul de instructiuni SPA1
+## Setul de instructiuni SAP1
 
 Orice microprocesor poate intelege doar semnale electrice, sau semnale logice de **'1'** si **'0'**. Modul cum un procesor poate intelege o anumita insiruire de biti de **'1'** si **'0'** ca pe o instructiune, si mai apoi modul cum stabileste cum sa execute aceasta instructiune este definit de un *designer CPU* (sau o echipa de astfel de designeri).
 
@@ -29,7 +29,7 @@ Practic acestia stabilesc cum ar trebui *encodata* o instructiunea intr-un sir d
 
 Desi suntem obisnuiti in ziua de azi sa vedem si sa folosim doar limbaje de nivel inalt(C++, Java, Rust, Go, Javascript, etc), designerii de CPU folosesc tot limbajul de asamblare pentru a defini comportamentul procesorului. Practic setul de instructiuni, reprezentat ca un limbaj de asamblare in software, si ca un sir de biti (limbaj masina) in hardware, reprezinta o interfata intre Software si Hardware, interfata ce este mai apoi abstractizata de nivelele superioare (ex. sistemul de operare).
 
-Pentru procesorul nostru SPA1 vom defini cateva reguli ale setului de instructiuni pe care il vom implementa:
+Pentru procesorul nostru SAP1 vom defini cateva reguli ale setului de instructiuni pe care il vom implementa:
 
 1. Dimensiunea instructiunilor este de 8 biti
 2. Dimensiunea datelor (operanzii nostri din operatiile aritmetice) vor avea 6 biti
@@ -59,7 +59,7 @@ Tabelul de mai sus reprezinta o varianta de codificare si definire a instructiun
     - Pentru instructiunile LOAD/ADD/SUB acesti 6 biti sunt reprezentati cu **'X'** ce simbolizeaza o valoarea indiferenta, semna ca putem codifica orice valoare pe 6 biti dorim in aceasta zona
     - Pentru instructiunile OUT/HALT ce folosesc aceeasi codificare pe cei mai semnificativi 2 biti, dar care nu au nevoie sa codifice date imediate, vom folosi niste valori constante (000000 si 1111111) pentru a le diferentia
 
-### Exemplu program SPA1
+### Exemplu program SAP1
 Un exemplu de program ce ar fi incarcat in memoria procesorului este urmatorul (comentariile reprezinta instructiunea de asamblare si rezultatul acesteia):
 
 ```
@@ -93,7 +93,7 @@ Mai sus vedem o schema conceptuala a procesorului nostru. Avand in vedere constr
 
 Acelasi ISA poate fi implementat in mai multe feluri, ceea ce numim o microarhitectura, in functie de nevoi: performanta, putere, cost. Un model similar vedem la ISA-ul x86, unde Intel si AMD implementeaza acelasi set de instructiuni cu microarhitecturi proprii, individuale.
 
-Modul in care vom implementa noi ISA-ul SPA1 este urmatorul:
+Modul in care vom implementa noi ISA-ul SAP1 este urmatorul:
 - Procesorul nostru va avea o memorie de instrctiuni de 256 de bytes (ceea ce inseamna ca aevm nevoie de un PC pe 8 bitit)
 - Vom opera in mod single cycle: asta inseamna ca fiecare instructiune va fi executata in cadrul unui singur ciclu de ceas (remember SOC)
 - Procesorul va avea un semnal de ceas (**clk**) si unul de **reset** ca si input-uri, si semnalul **acc** pe 6 biti ca si output (practica vom scoate la output permanent registrul **ACC** pentru observabilitate).
@@ -152,7 +152,7 @@ module CPU(
 endmodule
 ```
 
-Pentru testarea acestui **CPU** putem scrie un testbench simplu, ce reseteaza procesorul la inceputul simularii, dupa care scoate SAP1 din reset, si ruleaza simularea pentru un timp destul de indelungat astfel incat sa prindem in simulare toate instructiunile din programul nostru de test exemplificat [aici](#exemplu-program-spa1).
+Pentru testarea acestui **CPU** putem scrie un testbench simplu, ce reseteaza procesorul la inceputul simularii, dupa care scoate SAP1 din reset, si ruleaza simularea pentru un timp destul de indelungat astfel incat sa prindem in simulare toate instructiunile din programul nostru de test exemplificat [aici](#exemplu-program-SAP1).
 
 ``` verilog
 module cpu_testbench();
