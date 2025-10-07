@@ -208,7 +208,7 @@ O implementare corecta a microprocesorului SAP1 ar trebui sa rezulte in urmatoar
 
 ![alt text](img/testbench-results.png)
 
-Toate aceste module, plus programul de test, le gasiti in folderul **./src** al acestui repo-ului.
+Modulele descrise mai sus, plus programul de test, le gasiti in folderul **./src** al acestui repository.
 
 Modulul **top** al procesorului si memoria de instructiuni nu sunt sufuciente pentru a obtine implementarea completa a acestuia. Lipsesc module precum **ALU, ACCUMULATOR, PC, etc.** 
 
