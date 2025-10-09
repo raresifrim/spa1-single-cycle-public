@@ -216,6 +216,9 @@ In sectiunea de cerinte de mai jos, vi se cere sa implementati toate submodulele
 
 ## Cerinte
 
+_Pentru un reminder asupra limbajului Verilog, va incurajam sa vizitati acest link ca si suport:
+https://www.chipverify.com/verilog/verilog-tutorial_
+
 **1. Sa se implementeze in verilog modulul ALU al procesorului SAP1, ce primeste ca inputuri doua date pe 6 biti, si un bit pentru selectarea operatiei (adunare/scadere), si are ca output un alt semnal pe 6 biti ce reprezinta rezultatul operatiei.**
 
 Nu ne intereseaza in acest moment detalii precum carry/overflow, sau daca datele reprezinta numere cu semn. Le vom considera unsigned.
