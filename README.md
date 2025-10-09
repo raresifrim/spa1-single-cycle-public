@@ -298,11 +298,13 @@ module MUX2_1(
     input wire [5:0] B, //Datele din DECODER
     output wire [5:0] C
 );
+//TODO:
+endmodule
 ```
 
 --------
 
-**5. (BONUS) Implementati procesorul intr-un FPGA, folosnd of freceventa a ceasului de 1Hz, si afisati valoarea semnalului **acc** pe un display cu 7 segmente.**
+**5. (BONUS) Implementati procesorul intr-un FPGA, folosind o freceventa a ceasului de 1Hz (printr-un divizor de ceas), si afisati valoarea semnalului **acc** pe un display cu 7 segmente.**
 
 Ca si reminder, va lasam mai jos cateva portiuni folosite la laboratorul de SOC de anul trecut pentru afisarea unei valori de 6 biti pe un display cu 7 segmente. Evident, acestea trebuie adaptate pentru designul procesorului nostru care trebuie sa afiseze o singura valoare pe 6 biti.
 
