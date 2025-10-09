@@ -11,7 +11,7 @@ Ca si parte introductiva a labortatorului de APM, ce isi propune sa va dezvaluia
 - **_OUT_**: afisarea pe output a rezultatului
 - **_HALT_**: oprirea executiei 
 
-**SPA** vine in multe variatii, fiind un set de instructiuni (*ISA*) cu scop didactic, acesta poate fi definit in functie de nevoi pentru a reprezenta multiple tipuri de microarhitecturi, dar scopul final al acestora este sa implementeze cateva instructiuni aritmetico-logice de baza, plus manipularea datelor de intrare si iesire.
+**SAP** vine in multe variatii, fiind un set de instructiuni (*ISA*) cu scop didactic, acesta poate fi definit in functie de nevoi pentru a reprezenta multiple tipuri de microarhitecturi, dar scopul final al acestora este sa implementeze cateva instructiuni aritmetico-logice de baza, plus manipularea datelor de intrare si iesire.
 
 Pentru laboratorul nostru introductiv o sa ne focusam pe o varianta cat mai simpla a acestui ISA, si anume o arhitectura de tip acumulator precum in imaginea de mai jos:
 
