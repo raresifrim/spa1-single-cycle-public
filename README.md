@@ -219,6 +219,14 @@ In sectiunea de cerinte de mai jos, vi se cere sa implementati toate submodulele
 _Pentru un reminder asupra limbajului Verilog, va incurajam sa vizitati acest link ca si suport:
 https://www.chipverify.com/verilog/verilog-tutorial_
 
+_Pentru crearea proiectului in Vivado, folositi urmatoarea placa FPGA:_
+- _Family: Artix-7_
+- _⁠Package: csg324_
+- _⁠Speed: -1_
+- _⁠Board: xc7a100tcsg324-1_
+
+![alt text](img/fpga-part.png)
+
 **1. Sa se implementeze in verilog modulul ALU al procesorului SAP1, ce primeste ca inputuri doua date pe 6 biti, si un bit pentru selectarea operatiei (adunare/scadere), si are ca output un alt semnal pe 6 biti ce reprezinta rezultatul operatiei.**
 
 Nu ne intereseaza in acest moment detalii precum carry/overflow, sau daca datele reprezinta numere cu semn. Le vom considera unsigned.
@@ -309,11 +317,11 @@ endmodule
 
 **5. (BONUS) Implementati procesorul intr-un FPGA, folosind o freceventa a ceasului de 1Hz (printr-un divizor de ceas), si afisati valoarea semnalului **acc** pe un display cu 7 segmente.**
 
+![alt text](img/7segment-diagram.png)
+
 Ca si reminder, va lasam mai jos cateva portiuni folosite la laboratorul de SOC de anul trecut pentru afisarea unei valori de 6 biti pe un display cu 7 segmente. Evident, acestea trebuie adaptate pentru designul procesorului nostru care trebuie sa afiseze o singura valoare pe 6 biti.
 
 La [final](#template-xdc-nexys7) aveti si un template de fisier XDC pentru placa FPGA Nexys7 pe care o avem in cadrul laboratorului.
-
-![alt text](img/image-2.png)
 
 ![alt text](img/image-1.png)
 
